@@ -28,17 +28,16 @@ class Tracker {
         NINEAU_Config.setAdcEnabled(false);
         NINEAU_Config.setPageTrackingOnRenderTracking(false);
         NINEAU_ThirdParty.initialize();
-        NINEAU_ThirdParty.renderTracking();
 
         this.trackingId = NINEAU_Config.getCategory() + ":" + NINEAU_Config.getSiteName() + ":" + NINEAU_Config.getSectionName()  + ":" + NINEAU_Config.getSubsectionName();
     }
 
-    trackClick = (e, value, url) => {
+    trackClick = (value) => {
         //_cta_clicked
         //_masthead_clicked
         //_wallpaper_clicked
-        NINEAU_ThirdParty.trackClick(this.trackingId + value, this.trackingId );
-        window.open(appNexusClickTracker+url, '_blank');
+        console.log('track click: ', value);
+        NINEAU_ThirdParty.trackClick(this.trackingId + value, this.trackingId );        
     }
 }
 
