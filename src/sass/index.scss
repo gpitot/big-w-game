@@ -34,6 +34,8 @@ html, body {
         text-align: center;
         left:50%;
         transform: translateX(-50%);
+
+        pointer-events: none;
       }
       
       #leftPanel{
@@ -41,7 +43,6 @@ html, body {
         width:435px;
         height: 1000px;
         overflow: hidden;
-        pointer-events: none;
         order:1;
       }
       
@@ -57,7 +58,8 @@ html, body {
         #nineMasthead{
             position: relative;
             display: block;
-            width: 100%;
+            width: calc(100% + 2px);
+            margin-left:-1px;
             height: 250px;
             overflow: hidden;
         }
@@ -70,8 +72,6 @@ html, body {
             width: 100%;
             height: 10000px;
             overflow: hidden;
-            background-color: #fff;
-            pointer-events: none;
         }
       }
       
@@ -80,7 +80,6 @@ html, body {
         width: 435px;
         height: 1000px;
         overflow: hidden;
-        pointer-events: none;
         order:3;
       }
       
@@ -98,23 +97,68 @@ html, body {
         border-radius:50%;
     }
 
-    
+    img {
+        max-width:100%;
+    }
 }
 
+#leftPanel, #rightPanel {
+    
+
+    @media (max-width:1500px) {
+        
+        img {
+            margin:10px;
+            max-width:calc(100% - 20px);
+        }
+    }
+}
 
 #leftPanel {
+    
     #circle1 {
-        width:291px;
-        height:291px;
+        width: 291px;
+        height: 291px;
+        left: 25px;
+        top: -220px;
+
+       @media (max-width:1650px) {
+           display:none;
+        width: 150px;
+        height: 150px;
         left: 65px;
-        top: -202px;
+        top: -90px;
+       }
+
+       @media (max-width:1500px) {
+           left:20px;
+       }
+
+       @media (max-width:1400px) {
+        left: -40px;
+        width: 100px;
+        height: 100px;
+        top: -40px;
+       }
     }
 
     #circle2 {
-        width:592px;
-        height:592px;
+        width:541px;
+        height:541px;
         left: -280px;
         top: 250px;
+
+
+        @media (max-width:1800px) {
+            top:150px;
+        }
+
+        @media (max-width:1580px) {
+            
+            width:450px;
+            height:450px;
+        }
+
     }
 
     #circle3 {
@@ -128,7 +172,14 @@ html, body {
     #bigwlogo {
         position:absolute;
         right:15px;
-        bottom : 220px;
+        top : 50px;
+
+        @media (max-width:1500px) {
+            right:auto;
+            display:block;
+            margin:auto;
+            position:relative;
+        }
     }
 }
 
@@ -139,6 +190,15 @@ html, body {
         height:227px;
         right: 90px;
         top: -185px;
+
+        @media (max-width:1800px) {
+            right:25px;
+        }
+
+        @media (max-width:1500px) {
+            left:0;
+            right:auto;
+        }
     }
 
     #circle5 {
@@ -158,7 +218,29 @@ html, body {
     #christmas {
         position:absolute;
         left:15px;
-        bottom : 220px;
+        top : 350px;
+
+        @media (max-width:1500px) {
+            left:auto;
+            right:auto;
+            display:block;
+            margin:auto;
+            position:relative;
+        }
+    }
+
+    .mania {
+        position: absolute;
+        top: 50px;
+        left: 15px;
+
+        @media (max-width:1500px) {
+            left:auto;
+            right:auto;
+            display:block;
+            margin:auto;
+            position:relative;
+        }
     }
 }
 
@@ -170,6 +252,7 @@ html, body {
     position:relative;
     margin:10px auto;
     overflow:hidden;
+    cursor:pointer;
 
     .tile {
         position:absolute;
@@ -186,7 +269,7 @@ html, body {
         filter:brightness(0.8);
     }
     .destroy {
-        transform:scale(0);
+        opacity:0;
     }
 
     

@@ -9,14 +9,16 @@ module.exports = {
   entry: {
       app: './src/index.js'
   },
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
+  /*
   devServer: {
     contentBase : './build',
     hot : true
   },
+  */
   plugins : [
     new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    //new webpack.HotModuleReplacementPlugin(),
   ],
   output: {
     filename: '[name].bundle.js',
