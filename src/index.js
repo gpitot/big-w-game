@@ -59,20 +59,15 @@ function htmlLoaded() {
 
         // click trackers
         
-        const left = appnexusClickUrl + 'https://ad.doubleclick.net/ddm/trackclk/N70003.2432504NINE.COM.AU/B22791320.248943278;dc_trk_aid=445418339;dc_trk_cid=117626760;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua='
-        const right = appnexusClickUrl + 'https://ad.doubleclick.net/ddm/trackclk/N70003.2432504NINE.COM.AU/B22791320.248943278;dc_trk_aid=445474300;dc_trk_cid=117627339;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua='
+        const left = appnexusClickUrl + leftClick;
+        const right = appnexusClickUrl + rightClick;
         addClick(document.getElementById('leftPanel'), left);
         addClick(document.getElementById('rightPanel'), right);
 
-        //img trackers
-        const timestamp = new Date().getTime();
-        const leftimg = `https://ad.doubleclick.net/ddm/trackimp/N70003.2432504NINE.COM.AU/B22791320.248943278;dc_trk_aid=445418339;dc_trk_cid=117626760;ord=${timestamp};dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=?`;
-        const headimg = `https://ad.doubleclick.net/ddm/trackimp/N70003.2432504NINE.COM.AU/B22791320.248943278;dc_trk_aid=445474333;dc_trk_cid=117627342;ord=${timestamp};dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=?`;
-        const rightimg = `https://ad.doubleclick.net/ddm/trackimp/N70003.2432504NINE.COM.AU/B22791320.248943278;dc_trk_aid=445474300;dc_trk_cid=117627339;ord=${timestamp};dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=?`;
-        
-        createImpressionImage(document.getElementById('leftPanel'), leftimg);
-        createImpressionImage(document.getElementById('rightPanel'), rightimg);
-        createImpressionImage(document.getElementById('nineMasthead'), headimg);
+       
+        createImpressionImage(document.getElementById('leftPanel'), leftImp);
+        createImpressionImage(document.getElementById('rightPanel'), rightImp);
+        createImpressionImage(document.getElementById('nineMasthead'), headImp);
     })
 
     //loadCircles();
