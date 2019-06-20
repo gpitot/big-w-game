@@ -17,6 +17,14 @@ class AdScrolling {
     setUpDimensions = () => {
         this.setUpParentDimensions();
         this.setUpIframeDimensions();
+
+
+        //honey latest fix
+        const parentUrl = window.parent.location
+        const url = `${parentUrl.protocol}//${parentUrl.host}${parentUrl.pathname}`
+        if (url === 'https://honey.nine.com.au/latest') {
+            window.document.getElementById('siteContent').style.width = "1230px";
+        }
     }
 
     getParentAdvert = () => {
