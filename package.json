@@ -19,7 +19,7 @@
     "@babel/preset-env": "^7.3.1",
     "acorn": "^6.1.1",
     "babel-loader": "^8.0.5",
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^3.0.4",
     "clean-webpack-plugin": "^2.0.0",
     "exports-loader": "^0.7.0",
     "gulp-autoprefixer": "^6.0.0",
